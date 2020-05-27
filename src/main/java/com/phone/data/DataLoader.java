@@ -28,19 +28,19 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("DataLoader args = " + args[0]);
-        int num = 2;
-        int numberOfCustomers = (int) Math.pow(10, num);
-        String phonePattern = "84123456789";
-        String prefixPhone = phonePattern.substring(0, 11 - num);
-        String prefixName = "TaiLS_" + prefixPhone;
-
-        genCustomers(num, prefixName, prefixPhone);
+        if (args.length > 0) {
+            System.out.println("DataLoader args = " + args[0]);
+            int num = Integer.parseInt(args[0]);
+            int numberOfCustomers = (int) Math.pow(10, num);
+            String prefixPhone = "84123456789".substring(0, 11 - num);
+            String prefixName = "TaiLS_" + prefixPhone;
+            genCustomers(num, prefixName, prefixPhone);
 //        List<Customer> customers = this.loadCustomersFromFile();
 //        customers.forEach(customerService::create);
-        logger.info("Completed to insert " + numberOfCustomers + " customers with phone number" +
-                " from " + prefixPhone + String.format("%0" + num + "d", 0) +
-                " to " + prefixPhone + String.format("%0" + num + "d", numberOfCustomers - 1) + " to ElasticSearch database");
+            logger.info("Completed to insert " + numberOfCustomers + " customers with phone number" +
+                    " from " + prefixPhone + String.format("%0" + num + "d", 0) +
+                    " to " + prefixPhone + String.format("%0" + num + "d", numberOfCustomers - 1) + " to ElasticSearch database");
+        }
     }
 
     private List<Customer> loadCustomersFromFile() throws IOException {
