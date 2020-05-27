@@ -1,10 +1,10 @@
 # PhoneSearch
 
 ## To get source code from  GitHub
-  - git clode https://github.com/tailsptit/PhoneSearch.git
+  - git clone https://github.com/tailsptit/PhoneSearch.git
 
 ## Build project
-  - mvn package
+  - mvn clean package
  
 ## Run project
   ### To run PhoneSearch server without inserting customer data
