@@ -9,7 +9,7 @@
 ## Run project
   ### To run PhoneSearch server without inserting customer data
       java -jar target/PhoneSearch-1.0-SNAPSHOT.jar
-  ### To run PhoneSearch server without inserting customer data
+  ### To run PhoneSearch server inserting customer data
       java -jar target/PhoneSearch-1.0-SNAPSHOT.jar X
 
       In which, X should be an integer with value from 1 to 9
