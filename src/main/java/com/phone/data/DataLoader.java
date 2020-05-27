@@ -29,18 +29,20 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (args.length > 0) {
-            int num = Integer.parseInt(args[0]);
-            int numberOfCustomers = (int) Math.pow(10, num);
-            String prefixPhone = "84123456789".substring(0, 11 - num);
-            String prefixName = "TaiLS_" + prefixPhone;
-            genCustomers(num, prefixName, prefixPhone);
+            try {
+                int num = Integer.parseInt(args[0]);
+                int numberOfCustomers = (int) Math.pow(10, num);
+                String prefixPhone = "84123456789".substring(0, 11 - num);
+                String prefixName = "TaiLS_" + prefixPhone;
+                genCustomers(num, prefixName, prefixPhone);
 //        List<Customer> customers = this.loadCustomersFromFile();
 //        customers.forEach(customerService::create);
-            logger.info("Completed to insert " + numberOfCustomers + " customers with phone number" +
-                    " from " + prefixPhone + String.format("%0" + num + "d", 0) +
-                    " to " + prefixPhone + String.format("%0" + num + "d", numberOfCustomers - 1) + " to ElasticSearch database");
-        } else {
-            logger.info("Parameter should be an integer with range from 1 to 11");
+                logger.info("Completed to insert " + numberOfCustomers + " customers with phone number" +
+                        " from " + prefixPhone + String.format("%0" + num + "d", 0) +
+                        " to " + prefixPhone + String.format("%0" + num + "d", numberOfCustomers - 1) + " to ElasticSearch database");
+            } catch (Exception e){
+                logger.info("Parameter should be an integer with range from 1 to 11");
+            }
         }
     }
 
