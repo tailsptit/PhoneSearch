@@ -1,15 +1,15 @@
 # PhoneSearch
 
-1. To get source code from  GitHub
- git clode https://github.com/tailsptit/PhoneSearch.git
+#1. To get source code from  GitHub
+  - git clode https://github.com/tailsptit/PhoneSearch.git
 
-2. Build project
-mvn package
+#2. Build project
+  - mvn package
  
-3. Run project\t
-  a. To run PhoneSearch server without inserting customer data
+#3. Run project
+  ##a. To run PhoneSearch server without inserting customer data
       java -jar target/PhoneSearch-1.0-SNAPSHOT.jar
-  b. To run PhoneSearch server without inserting customer data
+  ##b. To run PhoneSearch server without inserting customer data
       java -jar target/PhoneSearch-1.0-SNAPSHOT.jar X
 
       In which, X should be an integer with value from 1 to 9
@@ -24,19 +24,19 @@ mvn package
       X = 9 : Create 1000.000.000 customers with phone number from 84000000000 to 84999999999
       
 
-4. Test 
-a. Create a customer using CREATE API using curl command
-  Using command:
-  curl -H "Content-Type: application/json" -d"{\"name\":\"value\", \"phone\":\"value\"}" localhost:8102/customers/create/
-  
-  Example:
-  curl -H "Content-Type: application/json" -d"{\"name\":\"TaiLS\", \"phone\":\"123456789129\"}" localhost:8102/customers/create/
+#4. Test 
+ ##a. Create a customer using CREATE API using curl command
+   - Using command:
+   curl -H "Content-Type: application/json" -d"{\"name\":\"value\", \"phone\":\"value\"}" localhost:8102/customers/create/
+
+   - Example:
+   curl -H "Content-Type: application/json" -d"{\"name\":\"TaiLS\", \"phone\":\"123456789129\"}" localhost:8102/customers/create/
 
 
-b. Get customers with prefix using curl command
-  Using command:
+##b. Get customers with prefix using curl command
+  - Using command:
     curl localhost:8102/customers/search/phone/{PhonePrefix}
     
-  Example:
+  - Example:
       curl localhost:8102/customers/search/phone/TaiLS
 
