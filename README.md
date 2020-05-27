@@ -27,10 +27,10 @@
 ## Test 
  ### Create a customer using CREATE API using curl command
    - Using command:
-   curl -H "Content-Type: application/json" -d"{\\"name\":\"value\", \"phone\":\"value\"}" localhost:8102/customers/create/
+   curl -H "Content-Type: application/json" -d"{\\"name\\":\\"value\\", \\"phone\\":\\"value\\"}" localhost:8102/customers/create/
 
    - Example:
-   curl -H "Content-Type: application/json" -d"{\"name\":\"TaiLS\", \"phone\":\"123456789129\"}" localhost:8102/customers/create/
+   curl -H "Content-Type: application/json" -d"{\\"name\\":\\"TaiLS\\", \\"phone\\":\\"123456789129\\"}" localhost:8102/customers/create/
 
 
 ### Get customers with prefix using curl command
