@@ -1,12 +1,12 @@
 # PhoneSearch
 
-##1. To get source code from  GitHub
+#1. To get source code from  GitHub
  git clode https://github.com/tailsptit/PhoneSearch.git
 
-##2. Build project
+#2. Build project
 mvn package
  
-##3. Run project\t
+#3. Run project\t
   a. To run PhoneSearch server without inserting customer data
       java -jar target/PhoneSearch-1.0-SNAPSHOT.jar
   b. To run PhoneSearch server without inserting customer data
